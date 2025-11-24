@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenLeaf Landscaping | Professional Lawn Care</title>
+    <meta name="description" content="Professional landscaping and lawn care services for residential and commercial properties. Get a free quote today.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">GreenLeaf.</a>
+                <a href="#quote" class="cta-button">Get a Free Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Your Dream Lawn, Delivered.</h1>
+                <p>We handle the hard work so you can enjoy your weekend. Professional landscaping services starting at $50/week.</p>
+                <a href="#quote" class="cta-button">Start Your Transformation</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="container services">
+            <div class="service-card">
+                <span class="service-icon">✂️</span>
+                <h3>Lawn Maintenance</h3>
+                <p>Weekly mowing, edging, and cleanup to keep your yard looking pristine.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🌿</span>
+                <h3>Garden Design</h3>
+                <p>Custom planting schemes and hardscaping to boost your curb appeal.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🍂</span>
+                <h3>Seasonal Cleanup</h3>
+                <p>Spring and Fall cleanup services to prepare your lawn for the changing seasons.</p>
+            </div>
+        </section>
+
+        <!-- Sales Funnel / Contact Form -->
+        <section id="quote" class="contact-section">
+            <div class="container">
+                <div class="form-wrapper">
+                    <h2 class="text-center mb-20">Get Your Free Estimate</h2>
+                    <p class="text-center mb-30">Fill out the form below and we'll get back to you within 24 hours.</p>
+                    
+                    <form action="https://hooks.zapier.com/hooks/catch/123456/abcdef/" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service">
+                                <option value="maintenance">Weekly Maintenance</option>
+                                <option value="design">Garden Design</option>
+                                <option value="cleanup">Seasonal Cleanup</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">I agree to the Privacy Policy.</label>
+                        </div>
+                        <button type="submit">Request Quote</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 GreenLeaf Landscaping. All rights reserved.</p>
+            <p><a href="../portfolio/index.html" style="color: inherit;">&larr; Back to Portfolio</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
