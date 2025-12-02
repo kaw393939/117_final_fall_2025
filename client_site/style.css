@@ -1,0 +1,384 @@
+/* GreenLeaf Landscaping Theme */
+:root {
+    --primary-green: #1F7A46;
+    --light-green: #F0FFF4;
+    --dark-text: #1A202C;
+    --white: #FFFFFF;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 100%;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--dark-text);
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Skip to content for accessibility */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-green);
+    color: var(--white);
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 0 0 4px;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: rgb(255 255 255 / 95%);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgb(0 0 0 / 5%);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: padding 0.3s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo::before {
+    content: '🌿';
+}
+
+.cta-button {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 6px rgb(31 122 70 / 20%);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgb(255 255 255 / 20%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.cta-button:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgb(31 122 70 / 40%);
+    background-color: #165835;
+}
+
+.cta-button:focus {
+    outline: 3px solid var(--primary-green);
+    outline-offset: 4px;
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+/* Hero with Parallax */
+.hero {
+    background-color: var(--light-green);
+    padding: clamp(80px, 15vw, 160px) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://placehold.co/1920x1080/2E8B57/FFFFFF/png?text=Nature+Pattern');
+    background-size: cover;
+    opacity: 0.08;
+    z-index: 0;
+
+    /* Simple CSS Parallax */
+    background-attachment: fixed; 
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 24px;
+    color: var(--primary-green);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    margin-bottom: 48px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--dark-text); /* Darker for contrast */
+    font-weight: 500;
+}
+
+/* Accessibility: Darker text for better contrast */
+p {
+    color: var(--dark-text);
+}
+
+/* Services */
+.services {
+    padding: 100px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    border: 1px solid #f0f0f0;
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+    background: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 2%);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgb(0 0 0 / 8%);
+    border-color: transparent;
+}
+
+.service-icon {
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: var(--dark-text);
+}
+
+/* Contact / Funnel */
+.contact-section {
+    background-color: var(--dark-text);
+    color: var(--white);
+    padding: 100px 0;
+}
+
+.form-wrapper {
+    background-color: var(--white);
+    color: var(--dark-text);
+    padding: 60px;
+    border-radius: 24px;
+    max-width: 650px;
+    margin: 0 auto;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #2d3748; /* Darker for contrast */
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgb(46 139 87 / 10%);
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: var(--primary-green);
+    color: var(--white);
+    border: none;
+    padding: 18px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-top: 10px;
+    position: relative;
+}
+
+button[type="submit"]:hover {
+    background-color: #165835;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgb(31 122 70 / 30%);
+}
+
+button[type="submit"]:focus {
+    outline: 3px solid var(--primary-green);
+    outline-offset: 4px;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98) translateY(0);
+}
+
+/* Invalid input states */
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown),
+select:invalid:not(:placeholder-shown) {
+    border-color: #E53E3E;
+}
+
+/* Valid input states */
+input:valid:not(:placeholder-shown),
+textarea:valid:not(:placeholder-shown),
+select:valid:not(:placeholder-shown) {
+    border-color: var(--primary-green);
+}
+
+footer {
+    text-align: center;
+    padding: 60px 0;
+    font-size: 0.9rem;
+    color: var(--dark-text); /* Darker for contrast */
+    background-color: #f7fafc;
+}
+
+/* Mobile Optimizations */
+@media (width <= 768px) {
+    .services {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 40px; /* Space for scrollbar */
+        gap: 20px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .service-card {
+        min-width: 85%; /* Show part of next card */
+        scroll-snap-align: center;
+    }
+    
+    .form-wrapper {
+        padding: 30px 20px;
+    }
+}
+
+/* Focus management for better keyboard navigation */
+*:focus-visible {
+    outline: 3px solid var(--primary-green);
+    outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Form Utilities */
+.text-center {
+    text-align: center;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    font-size: 0.9rem;
+    margin: 0;
+}

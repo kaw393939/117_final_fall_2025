@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Chen | AI Product Engineer</title>
+    <meta name="description" content="Portfolio of Alex Chen, specializing in AI + Enterprise Efficiency." />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Alex Chen | AI Product Engineer" />
+    <meta property="og:description" content="Bridging the gap between machine learning and practical business applications." />
+    <meta property="og:image" content="https://placehold.co/1200x630/000000/FFFFFF/png?text=Alex+Chen" />
+    
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://assets.calendly.com" />
+    <link rel="dns-prefetch" href="https://hooks.zapier.com" />
+    
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">ALEX CHEN.</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="portfolio.html">Work</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="container">
+        
+        <!-- Hero Section: Authority & Positioning -->
+        <section>
+            <div class="hero-text">
+                <h1>AI + Enterprise Efficiency.</h1>
+                <p>I bridge the gap between complex machine learning models and practical business applications. As an AI Product Engineer, I build systems that don't just think—they work.</p>
+                <a href="#consultation" class="btn">Book a Strategy Call</a>
+            </div>
+            <div class="hero-image">
+                <!-- Alt text for accessibility -->
+                <img src="https://placehold.co/400x400/E0E0E0/000000/png?text=Alex+Chen" alt="Portrait of Alex Chen" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+        </section>
+
+        <!-- About: Brand Archetype (The Sage/Creator) -->
+        <section>
+            <div class="col-left">
+                <h2>The Methodology.</h2>
+            </div>
+            <div class="col-right">
+                <p><strong>Knowledge is potential. Execution is power.</strong></p>
+                <p>My approach combines the rigorous analysis of a data scientist with the creative problem-solving of a product designer. I don't just implement AI; I architect solutions that scale.</p>
+                <p><em>"Simplicity is the ultimate sophistication."</em></p>
+            </div>
+        </section>
+
+        <!-- Services: Cialdini's Principles -->
+        <section>
+            <div class="service-card">
+                <h3>Audit & Strategy</h3>
+                <p><strong>Reciprocity:</strong> I offer a free initial audit of your current data infrastructure to identify high-impact AI opportunities.</p>
+            </div>
+            <div class="service-card">
+                <h3>Custom LLM Integration</h3>
+                <p><strong>Scarcity:</strong> I only take on 3 enterprise clients per quarter to ensure deep focus and bespoke quality.</p>
+            </div>
+            <div class="service-card">
+                <h3>Automated Workflows</h3>
+                <p><strong>Social Proof:</strong> Trusted by over 15 startups to automate their core business logic using Zapier and Python.</p>
+            </div>
+        </section>
+
+        <!-- Calendly Integration -->
+        <section id="consultation" class="cta-section">
+            <h2>Free 30-Minute Consultation</h2>
+            <p>Let's discuss how AI can reduce your operational costs by 20%.</p>
+            
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/" style="min-width:320px;height:630px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- Calendly inline widget end -->
+        </section>
+
+        <!-- Contact Form: Zapier Integration -->
+        <section id="contact">
+            <div class="col-left">
+                <h2>Get in Touch.</h2>
+                <p>Ready to transform your business?</p>
+            </div>
+            <div class="col-right">
+                <!-- This form would be connected to a Zapier Webhook URL -->
+                <form action="https://hooks.zapier.com/hooks/catch/123456/abcdef/" method="POST" class="contact-form" aria-label="Contact form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="consent" name="consent" required />
+                        <label for="consent">I agree to the privacy policy and to be contacted.</label>
+                    </div>
+                    <button type="submit" class="btn" style="width: auto; justify-self: start;">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Alex Chen. All rights reserved.</p>
+                <div>
+                    <a href="#">Privacy Policy</a>
+                    <span style="margin: 0 10px;">|</span>
+                    <a href="#">LinkedIn</a>
+                    <span style="margin: 0 10px;">|</span>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for Fade-in Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>
